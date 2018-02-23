@@ -1,0 +1,22 @@
+{
+  "name": "cel-b",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RCaroff/CestEncoreLoin-Back.git"
+  },
+  "author": "RCaroff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RCaroff/CestEncoreLoin-Back/issues"
+  },
+  "homepage": "https://github.com/RCaroff/CestEncoreLoin-Back#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
