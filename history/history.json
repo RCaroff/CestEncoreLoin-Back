@@ -1,0 +1,13 @@
+{
+  "history" : [
+    {
+      "destination":"Marseille"
+    },
+    {
+      "destination":"Strasbourg"
+    },
+    {
+      "destination":"Rouen"
+    }
+  ]
+}
