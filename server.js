@@ -24,25 +24,28 @@ apiRouter.get('/', function(req, res) {
 
 
 apiRouter.route('/history')
-.post(function(req, res) {
+.post(function(req, res)  {
   var destination = new Destination()
   console.log(`req body : ${JSON.stringify(req.body)}`);
-  destination.address = req.body.params.address
-  destination.save(function(err) {
-    if (err) {
-      if (err.code == 11000) {
-        return res.json({
-          success: false,
-          message: 'This destination already exists'
-        })
-      } else {
-        return res.send(err)
-      }
-    }
 
-    res.json({
-      message: 'Destination saved'
-    })
+  destination.address = req.body.params.address
+  Destination.find({address: destination.address})
+  .then(function(result) {
+    if (result.length == 0) {
+      destination.save(function(err) {
+        return res.json({
+          destination: destination.address
+        })
+      })
+    } else {
+      return res.json({
+        success: false,
+        message: 'This destination already exists'
+      })
+    }
+  })
+  .catch(function(err) {
+    return res.send(err)
   })
 })
 
